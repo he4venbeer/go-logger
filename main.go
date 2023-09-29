@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"go-logger/config"
-	"os"
+	"go-logger/app"
 )
 
 func main() {
-	fmt.Println("test")
-	config.LoadENV()
-	fmt.Println(os.Getenv("test"))
+	// setup and run app
+	err := app.SetupAndRunApp()
+	if err != nil {
+		panic(err)
+	}
 }
